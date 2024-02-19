@@ -1,4 +1,5 @@
 package sa.nhc.web;
+
 import com.testcrew.utility.TCRobot;
 import sa.nhc.web.pages.*;
 import com.testcrew.manager.TestConfigManager;
@@ -9,10 +10,11 @@ import java.util.Map;
 
 public class NHCWebApplication {
     public final RegistrationAndLoginPage registrationAndLogin;
+    public final UpdateUnitPage updateUnitPage;
 
     public NHCWebApplication() {
-        registrationAndLogin =  new RegistrationAndLoginPage();
-
+        registrationAndLogin = new RegistrationAndLoginPage();
+        updateUnitPage = new UpdateUnitPage();
     }
 
     public void openApplication(Map<String, String> data) throws Exception {
