@@ -39,7 +39,7 @@ public class RegistrationAndLoginPage {
         Browser.waitForSeconds(1);
         robot.keyPress(KeyEvent.VK_ENTER);
         Browser.waitForSeconds(8);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_SUBTRACT);
