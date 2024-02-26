@@ -25,11 +25,5 @@ public class UpdateUnit extends NHCWebTest {
             app.updateUnitPage.checkUnitStatusInactiveUpdate();
             app.updateUnitPage.clickOnUpdateUnitsButton();
             app.updateUnitPage.clickOnNewUpdateButton();
-
-
-
-
-
         }
-
 }

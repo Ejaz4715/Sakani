@@ -1,20 +1,37 @@
 package sa.nhc.web;
 
-import com.testcrew.utility.TCRobot;
 import sa.nhc.web.pages.*;
 import com.testcrew.manager.TestConfigManager;
 import com.testcrew.web.Browser;
 
-import java.awt.event.KeyEvent;
 import java.util.Map;
 
 public class NHCWebApplication {
+
+    //Sakani Partners
     public final RegistrationAndLoginPage registrationAndLogin;
     public final UpdateUnitPage updateUnitPage;
+    public final  UnitBookingPage unitBookingPage;
+
+    //Sakani Housing
+    public final BookingPage bookingPage;
+    public final LoginPage loginPage;
+    public final CommonUtilityPage commonUtilityPage;
+    public final HomePage homePage;
+
 
     public NHCWebApplication() {
+        //Sakani Partners
         registrationAndLogin = new RegistrationAndLoginPage();
         updateUnitPage = new UpdateUnitPage();
+        unitBookingPage = new UnitBookingPage();
+
+        //Sakani Housing
+        bookingPage = new BookingPage();
+        loginPage =  new LoginPage() ;
+        commonUtilityPage = new CommonUtilityPage();
+        homePage = new HomePage();
+
     }
 
     public void openApplication(Map<String, String> data) throws Exception {
@@ -23,17 +40,5 @@ public class NHCWebApplication {
         } else {
             Browser.openUrl(TestConfigManager.getTestSettingsWebAppURL());
         }
-//        Browser.waitForSeconds(8);
-//        TCRobot robot = new TCRobot();
-//        for (int i = 0; i < 3; i++) {
-//            robot.keyPress(KeyEvent.VK_CONTROL);
-//            robot.keyPress(KeyEvent.VK_SUBTRACT);
-//            robot.keyRelease(KeyEvent.VK_SUBTRACT);
-//            robot.keyRelease(KeyEvent.VK_CONTROL);
-//            robot.keyRelease(KeyEvent.VK_SUBTRACT);
-//            robot.keyRelease(KeyEvent.VK_CONTROL);
-//            robot.keyPress(KeyEvent.VK_CONTROL);
-//            robot.keyPress(KeyEvent.VK_SUBTRACT);
-//        }
     }
 }
