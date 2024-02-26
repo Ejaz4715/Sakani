@@ -10,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import sa.nhc.web.objects.UpdateUnitPageObjects;
-
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,13 +29,13 @@ public class UpdateUnitPage {
 
     }
     public void clickOnAdvancedSearchRadioButton() throws Exception {
+
         Browser.waitUntilInvisibilityOfElement(UpdateUnitPageObjects.dotsLoading(),30);
 //        Browser.waitUntilElementToBeClickable(UpdateUnitPageObjects.advancedSearchRadioButton(),30);
         Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.advancedSearchRadioButton());
         Browser.waitForSeconds(3);
         logger.addScreenshot("Select Advanced Search");
-
 
     }
     public void clickOnProjectCode() throws Exception {
@@ -47,6 +46,7 @@ public class UpdateUnitPage {
         selectFromList("01-01-0108");
         Browser.waitForSeconds(3);
         logger.addScreenshot("Search By Project Code");
+
 
     }
 
@@ -123,7 +123,6 @@ public class UpdateUnitPage {
         Assert.assertTrue(unitStatus.contains("نشط"));
         Browser.waitForSeconds(3);
         logger.addScreenshot("Unit Status Is Active");
-
     }
 
     public void clickOnUpdateUnitsButton() throws Exception {
@@ -273,3 +272,4 @@ public class UpdateUnitPage {
         fos.close();
     }
 }
+
