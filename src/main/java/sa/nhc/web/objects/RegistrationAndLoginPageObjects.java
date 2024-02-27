@@ -31,7 +31,8 @@ public class RegistrationAndLoginPageObjects {
                 put("en", "");
             }});
             put("verify-otp-button", new HashMap<>() {{
-                put("ar", "//span[text() = ' التحقق من الرمز ']");
+//                put("ar", "//span[text() = ' التحقق من الرمز ']");
+                put("ar", "//span[contains (text() , 'التحقق من الرمز')]");
                 put("en", "");
             }});
             put("sakani-logo", new HashMap<>() {{
@@ -43,7 +44,11 @@ public class RegistrationAndLoginPageObjects {
                 put("en", "");
             }});
             put("Individual-Registration", new HashMap<>() {{
-                put("ar", "//h3[text()=' فرد ']");
+                put("ar", "//h3[contains (text() , 'فرد')]");
+                put("en", "");
+            }});
+            put("Company-Registration", new HashMap<>() {{
+                put("ar", "//h3[contains (text(), 'الشركة')]");
                 put("en", "");
             }});
             put("CR-Number-Input-Field", new HashMap<>() {{
@@ -126,6 +131,18 @@ public class RegistrationAndLoginPageObjects {
                 put("ar", "//button[text()='إلغاء']");
                 put("en", "");
             }});
+            put("Company-Type", new HashMap<>() {{
+                put("ar", "//div[@class=\"options-container d-flex flex-wrap\"]/descendant::label");
+                put("en", "");
+            }});
+            put("Role-Dropdown", new HashMap<>() {{
+                put("ar", "//div[@class=\"dropdown-container pointer\"]/descendant::div[@class=\"ng-value-container\"]");
+                put("en", "");
+            }});
+            put("Role-Dropdown-Options", new HashMap<>() {{
+                put("ar", "//div[@role=\"option\"]");
+                put("en", "");
+            }});
         }
     };
 
@@ -169,6 +186,10 @@ public class RegistrationAndLoginPageObjects {
 
     public static By IndividualRegistration() throws Exception {
         return By.xpath(get("Individual-Registration"));
+    }
+
+    public static By CompanyRegistration() throws Exception {
+        return By.xpath(get("Company-Registration"));
     }
 
     public static By CRNumberInputField() throws Exception {
@@ -248,5 +269,17 @@ public class RegistrationAndLoginPageObjects {
 
     public static By UpdatesPopUp() throws Exception{
         return By.xpath(get("Updates-Pop-Up"));
+    }
+
+    public static By CompanyType() throws Exception{
+        return By.xpath(get("Company-Type"));
+    }
+    public static By RoleDropdown() throws Exception {
+        return By.xpath(get("Role-Dropdown"));
+    }
+
+
+    public static By RoleDropdownOptions() throws Exception{
+        return By.xpath(get("Role-Dropdown-Options"));
     }
 }

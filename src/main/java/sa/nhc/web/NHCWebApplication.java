@@ -19,6 +19,9 @@ public class NHCWebApplication {
     public final CommonUtilityPage commonUtilityPage;
     public final HomePage homePage;
 
+    //Sakani Admin
+    public final CreateProjectPage createProjectPage;
+
 
     public NHCWebApplication() {
         //Sakani Partners
@@ -31,6 +34,9 @@ public class NHCWebApplication {
         loginPage =  new LoginPage() ;
         commonUtilityPage = new CommonUtilityPage();
         homePage = new HomePage();
+
+        //Sakani Admin
+        createProjectPage = new CreateProjectPage();
 
     }
 

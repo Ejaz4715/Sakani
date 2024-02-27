@@ -87,8 +87,8 @@ public class CommonUtilityPage {
     }
 
     // Loading Spinner
-    public void spinnerLoading() throws Exception {
-        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 20);
+    public void SpinnerLoadingAdmin() throws Exception {
+        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 20);
 
     }
 

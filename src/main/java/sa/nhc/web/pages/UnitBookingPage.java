@@ -4,7 +4,7 @@ import com.testcrew.base.WebBasePage;
 import com.testcrew.web.Browser;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import sa.nhc.web.objects.UnitBookingPageObjects;
+import sa.nhc.web.objects.*;
 
 import java.util.List;
 
@@ -14,16 +14,20 @@ import static com.testcrew.manager.PDFReportManager.logger;
 public class UnitBookingPage extends WebBasePage {
 
     public void navigateToNewBookingPage() throws Exception {
-        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.BookingManagementOption(), 35);
-        Browser.click(UnitBookingPageObjects.BookingManagementOption());
-        Browser.waitForSeconds(2);
         Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.NewBookingButton(), 35);
+        Browser.waitForSeconds(2);
         Browser.click(UnitBookingPageObjects.NewBookingButton());
         logger.addScreenshot("");
     }
+    public void navigateToBookingManagement() throws Exception{
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.BookingManagementOption(), 35);
+        Browser.click(UnitBookingPageObjects.BookingManagementOption());
+    }
 
     public void enterNationalIDAndSearch(String nationalId) throws Exception {
+        Browser.waitUntilInvisibilityOfElement(UnitBookingPageObjects.LoadingIcon(), 30);
         Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.NationalIDInput(), 35);
+        Browser.waitForSeconds(2);
         Browser.setText(UnitBookingPageObjects.NationalIDInput(), nationalId);
         Browser.click(UnitBookingPageObjects.SearchButton());
     }
@@ -110,10 +114,8 @@ public class UnitBookingPage extends WebBasePage {
         Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.SearchByDropdown(), 35);
         Browser.waitForSeconds(2);
         Browser.click(UnitBookingPageObjects.SearchByDropdown());
-
         List<WebElement> list = Browser.getWebElements(UnitBookingPageObjects.SearchByDropdownOptions());
         for (WebElement options : list) {
-            System.out.println(options.getText());
             if (options.getText().contains(bankName)) {
                 options.click();
                 break;
@@ -158,4 +160,76 @@ public class UnitBookingPage extends WebBasePage {
         Browser.waitForSeconds(2);
         logger.addScreenshot("User eligibility status is: " + actualStatus);
     }
+
+    public void clickOnCancelBookingButton() throws Exception{
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.CancelBookingButton(), 30);
+        Browser.waitUntilElementToBeClickable(UnitBookingPageObjects.CancelBookingButton(), 30);
+        Browser.click(UnitBookingPageObjects.CancelBookingButton());
+    }
+
+    public void clickOnViewBookingDetails() throws Exception{
+        Browser.waitForSeconds(2);
+        logger.addScreenshot("");
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.ViewBookingDetailsButton(), 30);
+        Browser.waitUntilElementToBeClickable(UnitBookingPageObjects.ViewBookingDetailsButton(), 30);
+        Browser.click(UnitBookingPageObjects.ViewBookingDetailsButton());
+    }
+
+    public void selectReasonOfCancellation(String reason) throws Exception{
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.ReasonOfCancellationDropdown(), 35);
+        Browser.waitForSeconds(2);
+        Browser.click(UnitBookingPageObjects.ReasonOfCancellationDropdown());
+        List<WebElement> list = Browser.getWebElements(UnitBookingPageObjects.ReasonOfCancellationDropdownOptions());
+        for (WebElement options : list) {
+            if (options.getText().contains(reason)) {
+                options.click();
+                break;
+            }
+        }
+    }
+
+    public void clickNoButton() throws Exception {
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.NoButton(), 30);
+        Browser.waitUntilElementToBeClickable(UnitBookingPageObjects.NoButton(), 30);
+        Browser.click(UnitBookingPageObjects.NoButton());
+    }
+
+    public void clickYesButton() throws Exception {
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.YesButton(), 30);
+        Browser.waitUntilElementToBeClickable(UnitBookingPageObjects.YesButton(), 30);
+        Browser.click(UnitBookingPageObjects.YesButton());
+    }
+
+
+    public void enterVerificationOTP(String otp) throws Exception {
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.InputOTP(), 30);
+        Browser.waitUntilElementToBeClickable(UnitBookingPageObjects.InputOTP(), 30);
+        Browser.setText(UnitBookingPageObjects.InputOTP(), otp);
+        logger.addScreenshot("");
+    }
+
+    public void clickOnVerifyOTPButton() throws Exception{
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.VerifyOTPButton(), 30);
+        Browser.waitUntilElementToBeClickable(RegistrationAndLoginPageObjects.VerifyOTPButton(), 30);
+        Browser.click(RegistrationAndLoginPageObjects.VerifyOTPButton());
+    }
+
+    public void assertCancellationText() throws Exception{
+        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.BookingCancelledText(), 30);
+        Assert.assertTrue(Browser.isElementDisplayed(UnitBookingPageObjects.BookingCancelledText()), "Booking Cancelled pop up is not appearing");
+        Browser.waitForSeconds(1);
+        logger.addScreenshot("Cancelled Booking message");
+    }
+
+    public void verifyBookingIsNotAvailable() throws Exception{
+        Browser.waitForSeconds(2);
+        boolean status = false;
+        if(!(Browser.isElementPresent(UnitBookingPageObjects.ViewBookingDetailsButton()))){
+            status = true;
+        }
+        Assert.assertTrue((status), "Booking is not cancelled");
+        Browser.waitForSeconds(1);
+        logger.addScreenshot("Booking has been cancelled successfully");
+    }
+
 }

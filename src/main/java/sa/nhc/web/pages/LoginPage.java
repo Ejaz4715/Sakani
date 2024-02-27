@@ -12,6 +12,8 @@ import org.testng.Assert;
 
 import java.util.Map;
 
+import static com.testcrew.web.Browser.driver;
+
 
 public class LoginPage extends WebBasePage {
     public static final ReportManager logger = new ReportManager(LoginPage.class);
@@ -79,24 +81,16 @@ public class LoginPage extends WebBasePage {
         }
     }
 
-    public void userLoginAsAdmin(Map<String, String> data) throws Exception {
-        Browser.setText(LoginPageObjects.Email(), data.get("Email"));
-        Browser.waitForSeconds(4);
-        Browser.setText(LoginPageObjects.Password(), data.get("Password"));
-        Browser.waitForSeconds(4);
+    public void userLoginAsAdmin(String username, String password) throws Exception {
+        Browser.setText(LoginPageObjects.Email(), username);
+        Browser.setText(LoginPageObjects.Password(), password);
         logger.addScreenshot("Enter Credentials");
         Browser.moveToElement(LoginPageObjects.BTNLogin());
         Browser.click(LoginPageObjects.BTNLogin());
-        Browser.waitForSeconds(5);
-        for (int i = 1; i <= 1; i++) {
-
-            Browser.setText(CommonUtilityPageObjects.AdminOTP(), "1234");
-
-        }
-        logger.addScreenshot("Enter OTP");
-        Browser.waitForSeconds(5);
-        Browser.takeScreenshot();
-        Browser.waitForSeconds(3);
+        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 40);
+        Browser.waitUntilVisibilityOfElement(CommonUtilityPageObjects.AdminOTP(), 40);
+        Browser.setText(CommonUtilityPageObjects.AdminOTP(), "1234");
+        logger.addScreenshot("Entered OTP");
         Browser.click(CommonUtilityPageObjects.OTPVerify());
     }
 

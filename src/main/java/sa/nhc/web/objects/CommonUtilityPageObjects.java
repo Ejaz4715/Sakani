@@ -37,6 +37,10 @@ public class CommonUtilityPageObjects {
             put ("ar", "//div[contains(@class,'spinner-border')]");
         }});
 
+        put("Spinner_Loading_Admin", new HashMap<>(){{
+            put ("ar", "//div[contains(@class,'sakani-loading')]");
+        }});
+
     }};
 
     public static String get(String locator) throws Exception {
@@ -74,9 +78,13 @@ public class CommonUtilityPageObjects {
     public static By SwitchLanguage () throws Exception{
         return By.xpath(get("Switch_Language"));
     }
-    public static By SpinnerLoading () throws Exception{
+    public static By SpinnerLoadingAdmin () throws Exception{
         return By.xpath(get("Spinner_Loading"));
     }
+    public static By SpinnerLoadingAdminAdmin () throws Exception{
+        return By.xpath(get("Spinner_Loading_Admin"));
+    }
+    
 
 
 }

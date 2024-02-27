@@ -228,7 +228,7 @@ public class BookingPage extends WebBasePage {
         logger.info("User should able to enter otp after click on booking agreement");
         Browser.waitForSeconds(3);
         Browser.click(BookingPageObjects.bookingLandButton());
-        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 250);
+        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 250);
 
         Browser.waitForSeconds(15);
 
@@ -251,7 +251,7 @@ public class BookingPage extends WebBasePage {
         logger.info("User should be able to booking and apply Signature later");
         Browser.waitForSeconds(3);
         Browser.click(BookingPageObjects.bookingLandButton());
-        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 250);
+        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 250);
 
         Browser.waitForSeconds(15);
         Browser.click(BookingPageObjects.SignatureLaterOptionButton());
@@ -423,7 +423,7 @@ public class BookingPage extends WebBasePage {
         Browser.waitForSeconds(1);
         logger.addScreenshot("");
         Browser.waitForSeconds(1);
-        Browser.executeJSScroll(500);
+//        Browser.executeJSScroll(500);
         Browser.waitForSeconds(1);
         logger.addScreenshot("");
     }
@@ -443,11 +443,11 @@ public class BookingPage extends WebBasePage {
     public void VerifyUserAbleToCancelBooking() throws Exception {
         Browser.waitForSeconds(2);
         Browser.click(BookingPageObjects.cancelBooking());
-        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 100);
+        Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 100);
         Browser.waitForSeconds(7);
         if (Browser.isElementPresent(BookingPageObjects.continueCancellationButton())) {
             Browser.click(BookingPageObjects.continueCancellationButton());
-            Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 100);
+            Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 100);
             Browser.waitForSeconds(9);
             Browser.click(BookingPageObjects.otherOption());
             Browser.waitForSeconds(3);
@@ -456,7 +456,7 @@ public class BookingPage extends WebBasePage {
             Browser.click(BookingPageObjects.confirmCancellationButton());
             Browser.waitForSeconds(3);
             Browser.click(BookingPageObjects.confirmCancellationButtonYes());
-            Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoading(), 100);
+            Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 100);
             Browser.waitForSeconds(5);
             String CancelMsg = Browser.getWebElement(BookingPageObjects.successfulCancelTxt()).getText();
             Assert.assertTrue(CancelMsg.contains("تم إلغاء"));

@@ -2,13 +2,13 @@ package sa.nhc.web.pages;
 
 import com.testcrew.utility.TCRobot;
 import com.testcrew.web.Browser;
-import org.apache.commons.collections.functors.WhileClosure;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import sa.nhc.web.objects.CreateAndPublishProjectPageObjects;
 import sa.nhc.web.objects.RegistrationAndLoginPageObjects;
 import sa.nhc.web.objects.UnitBookingPageObjects;
 
@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static com.testcrew.manager.PDFReportManager.logger;
-import static com.testcrew.web.Browser.driver;
+import static com.testcrew.web.Browser.*;
 
 
 public class RegistrationAndLoginPage {
@@ -134,6 +134,11 @@ public class RegistrationAndLoginPage {
         Browser.click(RegistrationAndLoginPageObjects.IndividualRegistration());
     }
 
+    public void clickOnCompany() throws Exception {
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.CompanyRegistration(), 20);
+        Browser.click(RegistrationAndLoginPageObjects.CompanyRegistration());
+    }
+
     public void enterCRNumber(String CR_Number) throws Exception {
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.CRNumberInputField(), 20);
         Browser.setText(RegistrationAndLoginPageObjects.CRNumberInputField(), CR_Number);
@@ -165,7 +170,7 @@ public class RegistrationAndLoginPage {
     }
 
     public void uploadAttachment(String attachmentPDF) throws Exception {
-        Browser.waitForSeconds(5);
+        Browser.waitForSeconds(3);
         WebElement attachment = Browser.getWebElement(RegistrationAndLoginPageObjects.AttachmentInput());
         String filepath = System.getProperty("user.dir") + attachmentPDF;
         attachment.sendKeys(filepath);
@@ -199,6 +204,7 @@ public class RegistrationAndLoginPage {
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.CongratulationText(), 20);
         Assert.assertTrue(Browser.isElementDisplayed(RegistrationAndLoginPageObjects.CongratulationText()));
         String message = Browser.getWebElement(RegistrationAndLoginPageObjects.CongratulationText()).getText();
+        Browser.waitForSeconds(2);
         logger.addScreenshot("Registration message: " + message);
     }
 
@@ -275,6 +281,7 @@ public class RegistrationAndLoginPage {
 
     public void verifyStatusOfAccount(String status) throws Exception {
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.AccountStatusText(), 20);
+        Browser.waitForSeconds(2);
         WebElement element = Browser.getWebElement(RegistrationAndLoginPageObjects.AccountStatusText());
         boolean st = false;
         String actualStatus = element.getText();
@@ -292,6 +299,86 @@ public class RegistrationAndLoginPage {
         if(Browser.isElementPresent(RegistrationAndLoginPageObjects.UpdatesPopUp())){
             Browser.click(RegistrationAndLoginPageObjects.UpdatesPopUp());
         }
+    }
+
+    public void selectCompanyPartnerType() throws Exception{
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.CompanyType(), 30);
+        List<WebElement> typeList = Browser.getWebElements(RegistrationAndLoginPageObjects.CompanyType());
+        for (WebElement element : typeList){
+            element.click();
+        }
+    }
+
+    public void navigateToCompaniesUnderPartners() throws Exception{
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.Hover(), 20);
+        Browser.moveToElement(CreateAndPublishProjectPageObjects.Hover());
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.PartnersOption(), 20);
+        Browser.click(CreateAndPublishProjectPageObjects.PartnersOption());
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.CompaniesOption(), 20);
+        Browser.click(CreateAndPublishProjectPageObjects.CompaniesOption());
+        Browser.waitForSeconds(2);
+        logger.addScreenshot("Companies page of Partners");
+    }
+
+    public void navigateToDelegators() throws Exception{
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.DelegatorsTab(), 20);
+        Browser.waitForSeconds(1);
+        Browser.click(CreateAndPublishProjectPageObjects.DelegatorsTab());
+    }
+
+
+    public void enterCompanyCRNumber(String CR_number) throws Exception {
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.CompanyCRNumberInput(), 20);
+        Browser.waitForSeconds(3);
+        Browser.setText(CreateAndPublishProjectPageObjects.CompanyCRNumberInput(), CR_number);
+    }
+
+    public void verifyApprovalStatus(String status) throws Exception {
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.ApprovalStatus(), 20);
+        Browser.waitForSeconds(2);
+
+        WebElement ele = Browser.getWebElement(CreateAndPublishProjectPageObjects.ApprovalStatus());
+        String actualStatus = ele.getText();
+        boolean match = false ;
+        if (actualStatus.contains(status)){
+            match = true;
+        }
+        Assert.assertTrue(match, "Approval Status is: " + actualStatus);
+        Browser.waitForSeconds(2);
+        logger.addScreenshot("Approval status is: " + actualStatus);
+    }
+
+    public void clickOnApprovalStatus() throws Exception {
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.ApprovalStatus(), 20);
+        Browser.click(CreateAndPublishProjectPageObjects.ApprovalStatus());
+    }
+
+
+    public void clickOnApproveButton() throws Exception{
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.ApproveButton(), 20);
+        logger.addScreenshot("");
+        Browser.click(CreateAndPublishProjectPageObjects.ApproveButton());
+    }
+
+    public void clickOnConfirmButton() throws Exception {
+        Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.ConfirmButton(), 20);
+        logger.addScreenshot("");
+        Browser.click(CreateAndPublishProjectPageObjects.ConfirmButton());
+    }
+
+    public void selectRole(String role) throws Exception{
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.RoleDropdown(), 20);
+        Browser.click(RegistrationAndLoginPageObjects.RoleDropdown());
+        List <WebElement> roleList =  Browser.getWebElements(RegistrationAndLoginPageObjects.RoleDropdownOptions());
+
+        for (WebElement ele : roleList){
+            String getRole = ele.getText();
+            if(getRole.contains(role)){
+                ele.click();
+                break;
+            }
+        }
+        logger.addScreenshot("Developer role has been selected");
     }
 }
 
