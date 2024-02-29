@@ -423,7 +423,7 @@ public class BookingPage extends WebBasePage {
         Browser.waitForSeconds(1);
         logger.addScreenshot("");
         Browser.waitForSeconds(1);
-//        Browser.executeJSScroll(500);
+        Browser.executeJSScroll(500);
         Browser.waitForSeconds(1);
         logger.addScreenshot("");
     }
@@ -518,11 +518,11 @@ public class BookingPage extends WebBasePage {
 
         for (WebElement name : projectNameList) {
             actualProjectName = name.getText();
-            if (actualProjectName.equalsIgnoreCase(expectedProjectName)) {
+            if (actualProjectName.contains(expectedProjectName)) {
                 break;
             }
         }
-        Assert.assertEquals(expectedProjectName, actualProjectName, "Unit code does not match");
+        Assert.assertEquals(actualProjectName, expectedProjectName,"Unit code does not match");
         logger.addScreenshot("Project name is: " + actualProjectName);
     }
 
@@ -536,7 +536,7 @@ public class BookingPage extends WebBasePage {
                 break;
             }
         }
-        Assert.assertEquals(expectedUnitCode, actualUnitCode, "Unit code does not match");
+        Assert.assertEquals(actualUnitCode, expectedUnitCode, "Unit code does not match");
         logger.addScreenshot("Project name is: " + actualUnitCode);
     }
 

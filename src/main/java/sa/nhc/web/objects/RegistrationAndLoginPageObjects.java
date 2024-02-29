@@ -143,6 +143,14 @@ public class RegistrationAndLoginPageObjects {
                 put("ar", "//div[@role=\"option\"]");
                 put("en", "");
             }});
+            put("Warning-Pop-Up", new HashMap<>() {{
+                put("ar", "//button[@title=\"Close\"]");
+                put("en", "");
+            }});
+            put("Accept-Button", new HashMap<>() {{
+                put("ar", "//button[text()=' قبول ']");
+                put("en", "");
+            }});
         }
     };
 
@@ -281,5 +289,13 @@ public class RegistrationAndLoginPageObjects {
 
     public static By RoleDropdownOptions() throws Exception{
         return By.xpath(get("Role-Dropdown-Options"));
+    }
+
+    public static By WarningPopUp() throws Exception{
+        return By.xpath(get("Warning-Pop-Up"));
+    }
+
+    public static By AcceptButton() throws Exception{
+        return By.xpath(get("Accept-Button"));
     }
 }

@@ -11,7 +11,7 @@ public class NHCWebApplication {
     //Sakani Partners
     public final RegistrationAndLoginPage registrationAndLogin;
     public final UpdateUnitPage updateUnitPage;
-    public final  UnitBookingPage unitBookingPage;
+    public final BookUnitPage bookUnitPage;
 
     //Sakani Housing
     public final BookingPage bookingPage;
@@ -27,7 +27,7 @@ public class NHCWebApplication {
         //Sakani Partners
         registrationAndLogin = new RegistrationAndLoginPage();
         updateUnitPage = new UpdateUnitPage();
-        unitBookingPage = new UnitBookingPage();
+        bookUnitPage = new BookUnitPage();
 
         //Sakani Housing
         bookingPage = new BookingPage();

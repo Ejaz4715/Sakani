@@ -62,8 +62,9 @@ public class UpdateUnit extends NHCWebTest {
             app.registrationAndLogin.loginToSakani();
             app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
             app.registrationAndLogin.inputOTP();
+            app.registrationAndLogin.closePopUp();
             app.registrationAndLogin.selectRole("شركة تطوير عقارية");
-            app.registrationAndLogin.closeUpdatesPopUp();
+            app.registrationAndLogin.closePopUp();
             app.updateUnitPage.clickOnTheProjectsButton();
             logger.info("Step 02: Search For Project");
             app.updateUnitPage.clickOnAdvancedSearchRadioButton();
@@ -97,7 +98,7 @@ public class UpdateUnit extends NHCWebTest {
             app.updateUnitPage.enterUnitCode(data.get("Unit_Code"));
             app.updateUnitPage.clickOnSearchButton();
             app.updateUnitPage.checkUnitStatusActiveUpdate();
-            app.updateUnitPage.deleteFile();
+//            app.updateUnitPage.deleteFile();
 
         }
 
@@ -109,8 +110,9 @@ public class UpdateUnit extends NHCWebTest {
         app.registrationAndLogin.loginToSakani();
         app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLogin.inputOTP();
+        app.registrationAndLogin.closePopUp();
         app.registrationAndLogin.selectRole("شركة تطوير عقارية");
-        app.registrationAndLogin.closeUpdatesPopUp();
+        app.registrationAndLogin.closePopUp();
         app.updateUnitPage.clickOnTheProjectsButton();
         logger.info("Step 02: Search For Project");
         app.updateUnitPage.clickOnAdvancedSearchRadioButton();
@@ -144,7 +146,7 @@ public class UpdateUnit extends NHCWebTest {
         app.updateUnitPage.enterUnitCode(data.get("Unit_Code"));
         app.updateUnitPage.clickOnSearchButton();
         app.updateUnitPage.checkUnitStatusInactiveUpdate();
-        app.updateUnitPage.deleteFile();
+//        app.updateUnitPage.deleteFile();
 
     }
 
@@ -157,8 +159,9 @@ public class UpdateUnit extends NHCWebTest {
         app.registrationAndLogin.loginToSakani();
         app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLogin.inputOTP();
+        app.registrationAndLogin.closePopUp();
         app.registrationAndLogin.selectRole("شركة تطوير عقارية");
-        app.registrationAndLogin.closeUpdatesPopUp();
+        app.registrationAndLogin.closePopUp();
         app.updateUnitPage.clickOnTheProjectsButton();
         logger.info("Step 02: Search For Project");
         app.updateUnitPage.clickOnAdvancedSearchRadioButton();
@@ -181,7 +184,7 @@ public class UpdateUnit extends NHCWebTest {
         app.updateUnitPage.clickOnShowTheResultButton();
         logger.info("Step 05: Verify The Unit Status Can Not Be Update It");
         app.updateUnitPage.checkTheErrorMessage();
-        app.updateUnitPage.deleteFile();
+//        app.updateUnitPage.deleteFile();
 
     }
 }

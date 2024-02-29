@@ -45,10 +45,13 @@ public class RegistrationAndLogin extends NHCWebTest {
         app.registrationAndLogin.loginToSakani();
         app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLogin.inputOTP();
-        app.registrationAndLogin.closeUpdatesPopUp();
+        app.registrationAndLogin.closePopUp();
+        app.registrationAndLogin.selectRole("شركة تطوير عقارية");
+        app.registrationAndLogin.closePopUp();
         app.registrationAndLogin.verifyHomePageIsAppearing();
         logger.info("Step 02: Navigate to User Management page");
         app.registrationAndLogin.clickOnUserManagement();
+        app.registrationAndLogin.closePopUp();
         logger.info("Step 03: Search for the user with national id");
         app.registrationAndLogin.searchForUser(data.get("National_id"));
         app.registrationAndLogin.clickOnSearchButton();
@@ -76,7 +79,7 @@ public class RegistrationAndLogin extends NHCWebTest {
         app.registrationAndLogin.loginToSakani();
         app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLogin.inputOTP();
-        app.registrationAndLogin.closeUpdatesPopUp();
+        app.registrationAndLogin.closePopUp();
         logger.info("Step 02: Verify Homepage is visible to the user");
         app.registrationAndLogin.verifyHomePageIsAppearing();
     }
@@ -146,8 +149,9 @@ public class RegistrationAndLogin extends NHCWebTest {
         app.registrationAndLogin.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLogin.inputOTP();
         logger.info("Step 02: Select the Developer role for the user");
+        app.registrationAndLogin.closePopUp();
         app.registrationAndLogin.selectRole("شركة تطوير عقارية");
-        app.registrationAndLogin.closeUpdatesPopUp();
+        app.registrationAndLogin.closePopUp();
         logger.info("Step 03: Verify Homepage is visible to the user");
         app.registrationAndLogin.verifyHomePageIsAppearing();
     }

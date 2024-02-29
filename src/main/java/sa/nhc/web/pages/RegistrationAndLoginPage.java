@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import sa.nhc.web.objects.CreateAndPublishProjectPageObjects;
 import sa.nhc.web.objects.RegistrationAndLoginPageObjects;
-import sa.nhc.web.objects.UnitBookingPageObjects;
+import sa.nhc.web.objects.BookUnitPageObjects;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -149,7 +149,12 @@ public class RegistrationAndLoginPage {
     public void clickOnNextButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.NextButton(), 20);
         Browser.click(RegistrationAndLoginPageObjects.NextButton());
+//        while (!(Browser.isElementPresent(RegistrationAndLoginPageObjects.DelegateRegistration()))){
+//            Browser.click(RegistrationAndLoginPageObjects.NextButton());
+//            Browser.waitForSeconds(1);
+//        }
     }
+
 
 
     public void clickOnDelegate() throws Exception {
@@ -214,11 +219,11 @@ public class RegistrationAndLoginPage {
     }
 
     public void searchForUser(String nationalId) throws Exception {
-        Browser.waitUntilVisibilityOfElement(UnitBookingPageObjects.SearchByDropdown(), 30);
+        Browser.waitUntilVisibilityOfElement(BookUnitPageObjects.SearchByDropdown(), 30);
         Browser.waitForSeconds(2);
-        Browser.click(UnitBookingPageObjects.SearchByDropdown());
+        Browser.click(BookUnitPageObjects.SearchByDropdown());
 
-        List<WebElement> list = Browser.getWebElements(UnitBookingPageObjects.SearchByDropdownOptions());
+        List<WebElement> list = Browser.getWebElements(BookUnitPageObjects.SearchByDropdownOptions());
         for (WebElement options : list) {
             System.out.println(options.getText());
             if (options.getText().contains("رقم الهوية")) {
@@ -228,8 +233,8 @@ public class RegistrationAndLoginPage {
         }
 
         Browser.waitForSeconds(2);
-        Browser.click(UnitBookingPageObjects.NationalIdSearchInput());
-        Browser.setText(UnitBookingPageObjects.NationalIdSearchInput(), nationalId);
+        Browser.click(BookUnitPageObjects.NationalIdSearchInput());
+        Browser.setText(BookUnitPageObjects.NationalIdSearchInput(), nationalId);
     }
 
     public void clickOnSearchButton() throws Exception {
@@ -294,10 +299,16 @@ public class RegistrationAndLoginPage {
     }
 
 
-    public void closeUpdatesPopUp() throws Exception{
+    public void closePopUp() throws Exception{
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPageObjects.SakaniLogo(), 30);
         if(Browser.isElementPresent(RegistrationAndLoginPageObjects.UpdatesPopUp())){
             Browser.click(RegistrationAndLoginPageObjects.UpdatesPopUp());
+        }
+        else if (Browser.isElementPresent(RegistrationAndLoginPageObjects.WarningPopUp())) {
+            Browser.click(RegistrationAndLoginPageObjects.WarningPopUp());
+        }
+        else if (Browser.isElementPresent(RegistrationAndLoginPageObjects.AcceptButton())){
+            Browser.click(RegistrationAndLoginPageObjects.AcceptButton());
         }
     }
 
@@ -380,5 +391,6 @@ public class RegistrationAndLoginPage {
         }
         logger.addScreenshot("Developer role has been selected");
     }
+
 }
 

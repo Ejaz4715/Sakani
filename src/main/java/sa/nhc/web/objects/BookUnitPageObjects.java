@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UnitBookingPageObjects {
+public class BookUnitPageObjects {
 
     static Map<String, Map<String, String>> objects = new HashMap<>() {
         {

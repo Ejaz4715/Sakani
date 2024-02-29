@@ -20,7 +20,6 @@ public class CommonUtilityPage {
             Browser.waitForSeconds(6);
             Browser.click(HomePageObjects.BTNX());
             Browser.click(LoginPageObjects.BTNChoose());
-
         } else if (Browser.isElementPresent(HomePageObjects.BTNX())) {
             Browser.waitForSeconds(6);
             Browser.click(HomePageObjects.BTNX());

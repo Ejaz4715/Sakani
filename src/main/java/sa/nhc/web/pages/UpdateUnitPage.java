@@ -18,6 +18,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 import static com.testcrew.manager.PDFReportManager.logger;
@@ -31,27 +33,23 @@ public class UpdateUnitPage {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.theProjectButton(), 30);
         Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.theProjectButton());
-
     }
 
     public void clickOnAdvancedSearchRadioButton() throws Exception {
-
         Browser.waitUntilInvisibilityOfElement(UpdateUnitPageObjects.dotsLoading(), 30);
 //        Browser.waitUntilElementToBeClickable(UpdateUnitPageObjects.advancedSearchRadioButton(),30);
-        Browser.waitForSeconds(2);
+        Browser.waitForSeconds(1);
         Browser.click(UpdateUnitPageObjects.advancedSearchRadioButton());
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Select Advanced Search");
 
     }
 
     public void clickOnProjectCode(String projectCode) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.advancedSearchRadioButton(), 30);
-        Browser.waitForSeconds(2);
+        Browser.waitForSeconds(1);
         Browser.click(UpdateUnitPageObjects.advancedSearchRadioButton());
         Browser.click(UpdateUnitPageObjects.projectCodeDropdownList());
         selectFromList(projectCode);
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(2);
         logger.addScreenshot("Search By Project Code");
 
 
@@ -59,13 +57,11 @@ public class UpdateUnitPage {
 
     public void selectFromList(String list) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.selectOption(), 30);
-        Browser.waitForSeconds(2);
         List<WebElement> selectList = driver.findElements(UpdateUnitPageObjects.selectOption());
         for (WebElement listName : selectList) {
             String getListName = listName.getText();
             if (getListName.contains(list)) {
                 listName.click();
-                Browser.waitForSeconds(2);
                 break;
             }
         }
@@ -73,81 +69,72 @@ public class UpdateUnitPage {
 
     public void clickOnSearchButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.searchButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.searchButton());
 
     }
 
     public void clickOnSearchBy() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.searchBy(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.searchBy());
         selectFromList("رمز الوحدة");
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Search By Unit Code");
 
     }
 
     public void clickOnDetailsButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.detailsButton(), 30);
-        Browser.waitForSeconds(2);
+        Browser.waitForSeconds(1);
         Browser.click(UpdateUnitPageObjects.detailsButton());
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(2);
         logger.addScreenshot("Display The Searched Unit");
-
     }
 
     public void clickOnUnitsDetailsButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.unitsDetailsButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.unitsDetailsButton());
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Click Units Details");
-
     }
 
     public void enterUnitCode(String unitCode) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.unitCodeInput(), 30);
-        Browser.waitForSeconds(2);
         Browser.setText(UpdateUnitPageObjects.unitCodeInput(), unitCode);
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Enter The Unit Code For Searching");
-
     }
 
     public void checkUnitStatusInactiveUpdate() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.unitStatus(), 30);
-        Browser.waitForSeconds(2);
         Browser.executeJSScrollIntoView(UpdateUnitPageObjects.unitStatus());
+        Browser.waitForSeconds(1);
         String unitStatus = Browser.getWebElement(UpdateUnitPageObjects.unitStatus()).getText();
-        Assert.assertTrue(unitStatus.contains("غير نشط"));
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Unit Status Is Inactive");
-
+        unitStatus = unitStatus.trim();
+        boolean status = false;
+        if(unitStatus.contains("غير نشط")){
+            status = true;
+        }
+        Assert.assertTrue(status, "Unit is not updated");
+        Browser.waitForSeconds(2);
+        logger.addScreenshot("Unit Status is: " + unitStatus);
     }
 
     public void checkUnitStatusActiveUpdate() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.unitStatus(), 30);
-        Browser.waitForSeconds(2);
+        Browser.waitForSeconds(1);
         String unitStatus = Browser.getWebElement(UpdateUnitPageObjects.unitStatus()).getText();
-        Assert.assertTrue(unitStatus.contains("نشط"));
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Unit Status Is Active");
+        boolean status = false;
+        unitStatus = unitStatus.trim();
+        if(unitStatus.equalsIgnoreCase("نشط")){
+            status = true;
+        }
+        Assert.assertTrue(status, "Unit is not updated");
+        Browser.waitForSeconds(2);
+        logger.addScreenshot("Unit Status is: " + unitStatus);
     }
 
     public void clickOnUpdateUnitsButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.updateUnitsButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.updateUnitsButton());
-
     }
 
     public void clickOnNewUpdateButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.newUpdateButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.newUpdateButton());
-        Browser.waitForSeconds(3);
-        logger.addScreenshot("Download And Upload The File Of Unit Template");
 
     }
 
@@ -159,25 +146,26 @@ public class UpdateUnitPage {
 
     public void deleteFile() {
         File file = new File(setDownloadPath());
-        if (file.delete()) {
-            logger.info("File deleted");
-        }
+        if(file.exists())
+            if(file.delete()){
+                logger.info("Existing file is deleted");
+            }
     }
 
     public void clickOnDownloadTemplateButton() throws Exception {
+        deleteFile();
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.downloadTemplateButton(), 30);
-        Browser.waitForSeconds(2);
+        Browser.waitForSeconds(1);
         Browser.click(UpdateUnitPageObjects.downloadTemplateButton());
         TCRobot robot = new TCRobot();
-        Browser.waitForSeconds(5);
+        Browser.waitForSeconds(2);
         robot.setText(setDownloadPath());
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(1);
         robot.keyPress(KeyEvent.VK_ENTER);
-        Browser.waitForSeconds(5);
+        Browser.waitForSeconds(3);
     }
 
     public void clickOnUploadTemplateButton() throws Exception {
-        Browser.waitForSeconds(2);
 //        String home = System.getProperty("user.dir");
 //        String filePath = home + "\\Downloads\\update_unit_template.xlsx";
         WebElement UploadFile = Browser.getWebElement(UpdateUnitPageObjects.uploadTemplateButton());
@@ -187,40 +175,35 @@ public class UpdateUnitPage {
 
     public void clickOnAnalyzeTheFileButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.analyzeTheFileButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.analyzeTheFileButton());
 
     }
 
     public void clickOnShowTheResultButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.showTheResultButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.showTheResultButton());
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(2);
         logger.addScreenshot("The Result Of The Unit To Update");
 
     }
 
     public void clickOnCommitButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.commitButton(), 30);
-        Browser.waitForSeconds(2);
         Browser.click(UpdateUnitPageObjects.commitButton());
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.successMessage(), 30);
         String success = Browser.getWebElement(UpdateUnitPageObjects.successMessage()).getText();
         Assert.assertTrue(success.contains("تم إعتماد الوحدات بنجاح"));
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(2);
         logger.addScreenshot("The Units Successfully Commit It");
-        Browser.waitForSeconds(3);
         Browser.click(UpdateUnitPageObjects.yesButton());
 
     }
 
     public void checkTheErrorMessage() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.errorMessage(), 30);
-        Browser.waitForSeconds(2);
         String error = Browser.getWebElement(UpdateUnitPageObjects.errorMessage()).getText();
         Assert.assertTrue(error.contains("تقرير الأخطاء"));
-        Browser.waitForSeconds(3);
+        Browser.waitForSeconds(2);
         logger.addScreenshot("Unit should not be booked");
 
     }
@@ -342,33 +325,33 @@ public class UpdateUnitPage {
         logger.addScreenshot("Developer option is added with status: " + status);
     }
 
-    public void clickOnSaveButton() throws Exception{
+    public void clickOnSaveButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.SaveButton(), 20);
         Browser.click(UpdateUnitPageObjects.SaveButton());
     }
 
-    public void verifyConfirmationPopUp() throws Exception{
-        Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.ConfirmationPopUpMessage(), 20);
+    public void verifyConfirmationPopUp() throws Exception {
+        Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.ConfirmationPopUpMessage(), 300);
         Assert.assertTrue(Browser.isElementPresent(UpdateUnitPageObjects.ConfirmationPopUpMessage()));
-        logger.addScreenshot("Developer added successfully");
+        logger.addScreenshot("");
     }
 
-    public void enterProjectCode(String projectCode) throws Exception{
+    public void enterProjectCode(String projectCode) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.ProjectCodeInput(), 20);
         Browser.setText(UpdateUnitPageObjects.ProjectCodeInput(), projectCode);
     }
 
-    public void clickOnProjectSearchButton() throws Exception{
+    public void clickOnProjectSearchButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.SearchButtonOnProjectsPage(), 20);
         Browser.click(UpdateUnitPageObjects.SearchButtonOnProjectsPage());
     }
 
-    public void viewDetailsOfProject() throws Exception{
+    public void viewDetailsOfProject() throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.ViewProjectDetails(), 300);
         Browser.click(UpdateUnitPageObjects.ViewProjectDetails());
     }
 
-    public void changeDeveloperName(String companyName) throws Exception{
+    public void changeDeveloperName(String companyName) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.DeveloperNameInput(), 20);
         Browser.click(UpdateUnitPageObjects.DeveloperNameInput());
         Browser.waitForSeconds(1);
@@ -383,7 +366,7 @@ public class UpdateUnitPage {
         logger.addScreenshot("Developer name is changed to new Developer: " + companyName);
     }
 
-    public void enterIBAN(String iban) throws Exception{
+    public void enterIBAN(String iban) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.IbanInput(), 20);
         Browser.setText(UpdateUnitPageObjects.IbanInput(), iban);
     }
@@ -410,14 +393,14 @@ public class UpdateUnitPage {
         WebElement ele = Browser.getWebElement(UpdateUnitPageObjects.DeveloperList());
         boolean match = false;
         String actualCompanyName = ele.getText();
-        if(actualCompanyName.contains(companyName)){
+        if (actualCompanyName.contains(companyName)) {
             match = true;
         }
         Assert.assertTrue(match, "Developer is not added");
         logger.addScreenshot("Added developer: " + actualCompanyName);
     }
 
-    public void searchForDeveloper(String companyName) throws Exception{
+    public void searchForDeveloper(String companyName) throws Exception {
         Browser.waitUntilVisibilityOfElement(UpdateUnitPageObjects.SearchDeveloper(), 100);
         Browser.setText(UpdateUnitPageObjects.SearchDeveloper(), companyName);
     }

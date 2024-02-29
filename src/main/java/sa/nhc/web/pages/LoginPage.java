@@ -88,7 +88,7 @@ public class LoginPage extends WebBasePage {
         Browser.moveToElement(LoginPageObjects.BTNLogin());
         Browser.click(LoginPageObjects.BTNLogin());
         Browser.waitUntilInvisibilityOfElement(CommonUtilityPageObjects.SpinnerLoadingAdmin(), 40);
-        Browser.waitUntilVisibilityOfElement(CommonUtilityPageObjects.AdminOTP(), 40);
+        Browser.waitForSeconds(2);
         Browser.setText(CommonUtilityPageObjects.AdminOTP(), "1234");
         logger.addScreenshot("Entered OTP");
         Browser.click(CommonUtilityPageObjects.OTPVerify());
@@ -96,8 +96,8 @@ public class LoginPage extends WebBasePage {
 
     // User Login
     public void userLogin(String id, String password) throws Exception {
-        Browser.waitUntilVisibilityOfElement(CommonUtilityPageObjects.SwitchLanguage(), 45);
-        Browser.click(CommonUtilityPageObjects.SwitchLanguage());
+//        Browser.waitUntilVisibilityOfElement(CommonUtilityPageObjects.SwitchLanguage(), 45);
+//        Browser.click(CommonUtilityPageObjects.SwitchLanguage());
         Browser.waitUntilVisibilityOfElement(HomePageObjects.BTNHomeLogin(), 6);
         Browser.click(HomePageObjects.BTNHomeLogin());
         Browser.waitUntilVisibilityOfElement(HomePageObjects.BTNHomeLogin(), 6);
