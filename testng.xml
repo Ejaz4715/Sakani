@@ -5,9 +5,9 @@
         <listener class-name="com.testcrew.listener.ReportListener"/>
         <listener class-name="com.testcrew.listener.AnnotationTransformer"/>
     </listeners>
-    <test name="All Tests">
+    <test name="All Web Tests">
         <packages>
-            <package name="sa.nhc.sakani.*"/>
+            <package name="sa.nhc.web.*"/>
         </packages>
     </test>
 </suite>

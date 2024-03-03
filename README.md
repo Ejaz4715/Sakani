@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Test Automation Suite Powered by TestCrew
 
 Project description
@@ -76,3 +77,6 @@ Project description
 
 - Once the execution is completed, the reports will be created under reports folder on the project root Open this on any browser to view it.
   - ![img.png](readme/img_5.png)
+=======
+# Introduction
+>>>>>>> remote-2/main
