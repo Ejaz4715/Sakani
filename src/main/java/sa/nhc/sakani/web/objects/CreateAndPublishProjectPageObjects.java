@@ -397,6 +397,30 @@ public class CreateAndPublishProjectPageObjects {
         put("Total-Area", new HashMap<>(){{
             put ("ar", "(//div//input[@type='text'])[5]");
         }});
+
+
+        //For Company activation
+        put("Partners-Option", new HashMap<>(){{
+            put ("ar", "//div[text()='شريك']");
+        }});
+        put("Companies-Option", new HashMap<>(){{
+            put ("ar", "//div[text()=' شركات ']/parent::div");
+        }});
+        put("Delegators-Tab", new HashMap<>(){{
+            put ("ar", "//div[text()='إدارة المندوبين']");
+        }});
+        put("Company-CR-Number-Input", new HashMap<>(){{
+            put ("ar", "//input[@placeholder=\"رقم السجل التجاري\"]");
+        }});
+        put("Approval-Status", new HashMap<>(){{
+            put ("ar", "//datatable-body//datatable-body-row//datatable-body-cell[7]/descendant::span");
+        }});
+        put("Approve-Button", new HashMap<>(){{
+            put ("ar", "//span[text() ='قبول']/parent::span");
+        }});
+        put("Confirm-Button", new HashMap<>(){{
+            put ("ar", "//span[text()='تأكيد']");
+        }});
     }};
 
 
@@ -783,5 +807,34 @@ public class CreateAndPublishProjectPageObjects {
 
     public static By totalArea () throws Exception{
         return By.xpath(get("Total-Area"));
+    }
+
+    public static By PartnersOption() throws Exception{
+        return By.xpath(get("Partners-Option"));
+    }
+
+    public static By CompaniesOption() throws Exception{
+        return By.xpath(get("Companies-Option"));
+    }
+
+    public static By DelegatorsTab() throws Exception {
+        return By.xpath(get("Delegators-Tab"));
+    }
+
+    public static By CompanyCRNumberInput() throws Exception{
+        return By.xpath(get("Company-CR-Number-Input"));
+    }
+
+    public static By ApprovalStatus() throws Exception{
+        return By.xpath(get("Approval-Status"));
+    }
+
+
+    public static By ApproveButton() throws Exception{
+        return By.xpath(get("Approve-Button"));
+    }
+
+    public static By ConfirmButton() throws Exception{
+        return By.xpath(get("Confirm-Button"));
     }
 }

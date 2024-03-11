@@ -20,7 +20,9 @@ import java.util.concurrent.TimeUnit;
 
 import static com.testcrew.web.Browser.*;
 
-public class CreateProjectPage extends WebBasePage {
+public class CreateProjectPage {
+    public CreateProjectPage() {
+    }
 
     public void clickOnAddNewProject() throws Exception {
         Browser.waitUntilVisibilityOfElement(CreateAndPublishProjectPageObjects.Hover(), 30);

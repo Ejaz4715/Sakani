@@ -10,12 +10,16 @@ import org.testng.Assert;
 import sa.nhc.sakani.web.objects.BookingPageObjects;
 import sa.nhc.sakani.web.objects.CommonUtilityPageObjects;
 
+import java.util.List;
 import java.util.Map;
 
 import static com.testcrew.web.Browser.driver;
 import static com.testcrew.web.Browser.logger;
 
-public class BookingPage extends WebBasePage {
+public class BookingPage {
+    public BookingPage(){
+
+    }
 
     public void BookingOffPlanMOHEligibleWithoutFee(Map<String, String> data) throws Exception {
         VerifyUserAbleToStartNewOffPlanBooking();
@@ -415,5 +419,41 @@ public class BookingPage extends WebBasePage {
         }
         String CancelMsg = Browser.getWebElement(BookingPageObjects.successfulCancelTxt()).getText();
         Assert.assertTrue(CancelMsg.contains("تم الإلغاء"));
+    }
+
+
+    public void assertProjectName(String expectedProjectName) throws Exception {
+        Browser.waitUntilVisibilityOfElement(BookingPageObjects.ProjectName(), 30);
+        List<WebElement> projectNameList = Browser.getWebElements(BookingPageObjects.ProjectName());
+        String actualProjectName = "";
+
+        for (WebElement name : projectNameList) {
+            actualProjectName = name.getText();
+            if (actualProjectName.contains(expectedProjectName)) {
+                break;
+            }
+        }
+        Assert.assertEquals(actualProjectName, expectedProjectName,"Unit code does not match");
+        logger.addScreenshot("Project name is: " + actualProjectName);
+    }
+
+    public void assertUnitCode(String expectedUnitCode) throws Exception {
+        Browser.waitUntilVisibilityOfElement(BookingPageObjects.UnitCode(), 30);
+        List<WebElement> untiCodeList = Browser.getWebElements(BookingPageObjects.UnitCode());
+        String actualUnitCode = "";
+        for (WebElement name : untiCodeList) {
+            actualUnitCode = name.getText();
+            if (actualUnitCode.equalsIgnoreCase(expectedUnitCode)) {
+                break;
+            }
+        }
+        Assert.assertEquals(actualUnitCode, expectedUnitCode, "Unit code does not match");
+        logger.addScreenshot("Project name is: " + actualUnitCode);
+    }
+
+    public void clickPayBookingFeesButton() throws Exception {
+        Browser.waitUntilVisibilityOfElement(BookingPageObjects.payFeeButton(), 20);
+        Browser.moveToElement(BookingPageObjects.payFeeButton());
+        Browser.click(BookingPageObjects.payFeeButton());
     }
 }

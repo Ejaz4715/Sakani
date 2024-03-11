@@ -9,7 +9,11 @@ import org.testng.Assert;
 import java.util.Map;
 
 
-public class LoginPage extends WebBasePage {
+public class LoginPage   {
+
+    public LoginPage() {
+    }
+
     public static final ReportManager logger = new ReportManager(LoginPage.class);
 
     // Click on Login Button

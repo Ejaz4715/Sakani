@@ -1,6 +1,5 @@
 package sa.nhc.sakani.web.login;
 
-import com.testcrew.web.Browser;
 import sa.nhc.sakani.web.base.NHSSakaniWebTest;
 import org.testng.annotations.Test;
 

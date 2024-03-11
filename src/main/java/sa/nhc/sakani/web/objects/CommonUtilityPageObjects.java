@@ -84,5 +84,8 @@ public class CommonUtilityPageObjects {
         return By.xpath(get("Spinner_Loading_Admin"));
     }
 
+    public static By UserOTP () throws Exception{
+        return By.xpath("(//div[@formarrayname=\"otps\"]/child::input)[1]");
+    }
 
 }

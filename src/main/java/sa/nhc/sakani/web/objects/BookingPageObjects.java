@@ -288,6 +288,18 @@ public class BookingPageObjects {
                 put("en", "");
                 put("ar", "(//div//a//span[@class='px-4 py-2'])[1]");
             }});
+
+
+            //Sakani 4
+            put("Project-Title", new HashMap<>() {{
+                put("en", "");
+                put("ar", "//div[contains(@class,'project-name')]");
+            }});
+
+            put("Unit-List", new HashMap<>() {{
+                put("en", "");
+                put("ar", "//button[contains(text(),'قائمة الوحدات')]");
+            }});
         }
     };
 
@@ -512,5 +524,15 @@ public class BookingPageObjects {
 
     public static By successfulBookingLandMsg() throws Exception {
         return By.xpath(get("Successful-Booking-Land-Msg"));
+    }
+
+    //Sakani 4
+
+    public static By ProjectName() throws Exception {
+        return By.xpath(get("Project-Name"));
+    }
+
+    public static By UnitCode() throws Exception {
+        return By.xpath(get("Unit-Code"));
     }
 }

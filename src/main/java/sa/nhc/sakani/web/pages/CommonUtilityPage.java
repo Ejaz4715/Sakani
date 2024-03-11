@@ -6,6 +6,8 @@ import com.testcrew.web.Browser;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import sa.nhc.sakani.web.objects.CommonUtilityPageObjects;
+import sa.nhc.sakani.web.objects.HomePageObjects;
+import sa.nhc.sakani.web.objects.LoginPageObjects;
 
 public class CommonUtilityPage {
 
@@ -71,4 +73,20 @@ public class CommonUtilityPage {
 
     // Wait in 10 Second
 
+
+    public void closePopUpWindows() throws Exception {
+        if (Browser.isElementPresent(HomePageObjects.BTNX()) && Browser.isElementPresent(LoginPageObjects.BTNChoose())) {
+            Browser.waitForSeconds(6);
+            Browser.click(HomePageObjects.BTNX());
+            Browser.click(LoginPageObjects.BTNChoose());
+        } else if (Browser.isElementPresent(HomePageObjects.BTNX())) {
+            Browser.waitForSeconds(6);
+            Browser.click(HomePageObjects.BTNX());
+        } else if (Browser.isElementPresent(LoginPageObjects.BTNChoose())) {
+            Browser.waitForSeconds(6);
+            Browser.click(LoginPageObjects.BTNChoose());
+        } else {
+            Browser.waitForSeconds(2);
+        }
+    }
 }

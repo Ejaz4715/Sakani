@@ -2,6 +2,7 @@ package sa.nhc.sakani.web.pages;
 
 import com.testcrew.web.Browser;
 import org.testng.Assert;
+import sa.nhc.sakani.web.NHSSakaniWebApplication;
 import sa.nhc.sakani.web.objects.RegistrationPageObjects;
 
 import java.util.Map;

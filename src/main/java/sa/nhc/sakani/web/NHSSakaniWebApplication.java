@@ -8,9 +8,6 @@ import com.testcrew.web.Browser;
 import java.awt.event.KeyEvent;
 import java.util.Map;
 
-import static com.testcrew.web.Browser.driver;
-import static com.testcrew.web.Browser.logger;
-
 public class NHSSakaniWebApplication {
 
     public final HomePage homePage;
@@ -24,8 +21,14 @@ public class NHSSakaniWebApplication {
     public final BookingPage bookingPage;
     public final CreateProjectPage createProjectPage;
 
-    public NHSSakaniWebApplication() {
+    //Sakani 4
+    public final BookUnitPage bookUnitPage;
+    public final  UpdateUnitPage updateUnitPage;
+    public RegistrationAndLoginPartnersPage registrationAndLoginPartners;
 
+    public final NewMethods newMethods;
+
+    public NHSSakaniWebApplication() {
         homePage = new HomePage();
         loginPage = new LoginPage();
         registrationPage = new RegistrationPage();
@@ -36,6 +39,12 @@ public class NHSSakaniWebApplication {
         basicMethodsPage = new BasicMethodsPage();
         bookingPage = new BookingPage();
         createProjectPage = new CreateProjectPage();
+
+        //Sakani 4
+        bookUnitPage = new BookUnitPage();
+        updateUnitPage = new UpdateUnitPage();
+        registrationAndLoginPartners = new RegistrationAndLoginPartnersPage();
+        newMethods = new NewMethods();
 
     }
 

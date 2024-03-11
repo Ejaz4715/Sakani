@@ -4,14 +4,17 @@ import com.testcrew.base.WebBaseTest;
 import com.testcrew.manager.ReportManager;
 import com.testcrew.web.Browser;
 import org.testng.Assert;
+import sa.nhc.sakani.web.NHSSakaniWebApplication;
 import sa.nhc.sakani.web.objects.HomePageObjects;
 import sa.nhc.sakani.web.objects.LoginPageObjects;
 
 
 public class HomePage  {
-    public static ReportManager logger = new ReportManager(WebBaseTest.class);
-    public HomePage() {
+    public HomePage(){
+
     }
+
+    public static ReportManager logger = new ReportManager(WebBaseTest.class);
 
     // Click on Login Button In home Page
     public void clickOnLoginButtonInHomePage() throws Exception {
