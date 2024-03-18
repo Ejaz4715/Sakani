@@ -11,7 +11,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
     public void RegisterAsAnIndividualDelegate(Map<String, String> data) throws Exception {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         logger.info("Step 01: Navigate to Registration page > Select Individual");
         app.registrationAndLoginPartners.clickOnRegisterButton();
         app.registrationAndLoginPartners.clickOnIndividual();
@@ -42,7 +42,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -76,7 +76,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -88,7 +88,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
     public void RegisterAsACompanyDelegate(Map<String, String> data) throws Exception {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         logger.info("Step 01: Navigate to Registration page > Select Individual");
         app.registrationAndLoginPartners.clickOnRegisterButton();
         app.registrationAndLoginPartners.clickOnCompany();
@@ -122,7 +122,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Application Enter Username, Enter Password, click Login");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.newMethods.LoginAsAdmin(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to Companies page");
         app.registrationAndLoginPartners.navigateToCompaniesUnderPartners();
@@ -145,7 +145,7 @@ public class RegistrationAndLoginPartners extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         logger.info("Step 02: Select the Developer role for the user");

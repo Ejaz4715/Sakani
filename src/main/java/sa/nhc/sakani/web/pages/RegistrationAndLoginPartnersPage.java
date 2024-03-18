@@ -28,10 +28,10 @@ public class RegistrationAndLoginPartnersPage {
     public RegistrationAndLoginPartnersPage(){
 
     }
-    /*
+    /**
      * Login through Sakani alert box
-     * */
-    public void loginToSakani() throws AWTException {
+     */
+    public void loginToSakani() throws Exception {
         TCRobot robot = new TCRobot();
         robot.setText("sakani");
         Browser.waitForSeconds(1);
@@ -40,7 +40,7 @@ public class RegistrationAndLoginPartnersPage {
         robot.setText("together we build Vision 2030");
         Browser.waitForSeconds(1);
         robot.keyPress(KeyEvent.VK_ENTER);
-        Browser.waitForSeconds(8);
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPartnersPageObjects.LoginButton(), 100);
         for (int i = 0; i < 2; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_SUBTRACT);
@@ -125,7 +125,6 @@ public class RegistrationAndLoginPartnersPage {
         fos.close();
     }
 
-
     public void clickOnRegisterButton() throws Exception {
         Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPartnersPageObjects.RegisterButton(), 20);
         Browser.click(RegistrationAndLoginPartnersPageObjects.RegisterButton());
@@ -156,7 +155,6 @@ public class RegistrationAndLoginPartnersPage {
 //            Browser.waitForSeconds(1);
 //        }
     }
-
 
 
     public void clickOnDelegate() throws Exception {

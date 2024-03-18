@@ -1,0 +1,93 @@
+[12:09:23.108] [DEBUG] [ReportManager.java:86] - Loaded TestConfig properties from : D:\3-IntellijWorkspace\NHC\Sakani_Combined\Sakani\src\test\resources\TestConfig.properties
+[12:09:23.257] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /customXml/_rels/item1.xml.rels
+[12:09:23.272] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table1.xml.rels
+[12:09:23.272] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table2.xml.rels
+[12:09:23.272] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table3.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table4.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table5.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/_rels/workbook.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet2.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet3.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet4.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet5.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet6.xml.rels
+[12:09:23.288] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet7.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet8.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet9.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet10.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet11.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet12.xml.rels
+[12:09:23.304] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /_rels/.rels
+[12:09:23.641] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/connections
+[12:09:23.825] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml
+[12:09:23.825] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXmlProps
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:23.841] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:23.857] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:23.857] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:24.225] [DEBUG] [ReportManager.java:86] - Test Suite details Initialized.
+[12:09:25.477] [DEBUG] [ReportManager.java:86] - Suite execution started!
+[12:09:26.560] [INFO ] [ReportManager.java:91] - Test Details :{TestName=login to Sakani Partners as an Individual, P_Key=39, TestMethodName=LoginAsAnIndividual, SuiteType=SmokeSuite, Description=login to Sakani Partners as an Individual, TC_ID=TC_39_login to Sakani Partners as an Individual, Execute=Yes, TestDataSource=PartnersLogin~Individual Login, TC_TYPE=Web, Business Feature=Login, RunOrder=39, Invoke=1}
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /customXml/_rels/item1.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table1.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table2.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table3.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table4.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/tables/_rels/table5.xml.rels
+[12:09:26.576] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/_rels/workbook.xml.rels
+[12:09:26.592] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+[12:09:26.592] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet2.xml.rels
+[12:09:26.593] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet3.xml.rels
+[12:09:26.593] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet4.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet5.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet6.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet7.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet8.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet9.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet10.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet11.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /xl/worksheets/_rels/sheet12.xml.rels
+[12:09:26.597] [DEBUG] [PackageRelationshipCollection.java:309] - Parsing relationship: /_rels/.rels
+[12:09:26.613] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/connections
+[12:09:26.644] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXmlProps
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:26.660] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:26.676] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/queryTable
+[12:09:26.676] [DEBUG] [POIXMLFactory.java:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[12:09:26.760] [INFO ] [ReportManager.java:91] - Test Data :[{Username=1056789129, Reference=Individual Login, URL=https://test1-partners.sakani.sa/auth, Password=Aa@123456}]
+[12:09:26.807] [DEBUG] [ReportManager.java:86] - System download path :report\2024-03-18-12-09-23\downloads
+[12:09:26.807] [DEBUG] [ReportManager.java:86] - Merging user Capabilities : Capabilities {acceptInsecureCerts: true}
+[12:09:26.807] [DEBUG] [ReportManager.java:86] - Browser : chrome, Capabilities : Capabilities {acceptInsecureCerts: true}
+[12:09:26.829] [DEBUG] [ReportManager.java:86] - Browser : chrome, Using incognito mode : true
+[12:09:29.223] [DEBUG] [ReportManager.java:86] - Browser Implicit wait set to 1 Seconds.
+[12:09:29.254] [DEBUG] [ReportManager.java:86] - Maximizing browser.
+[12:09:29.581] [INFO ] [ReportManager.java:91] - Test Started Class :RegistrationAndLoginPartners, Test Method :LoginAsAnIndividual
+[12:09:29.994] [INFO ] [ReportManager.java:91] - Step 00: Test Data : {Username=1056789129, Reference=Individual Login, URL=https://test1-partners.sakani.sa/auth, Password=Aa@123456}
+[12:09:30.294] [DEBUG] [ReportManager.java:86] - Open URL : https://test1-partners.sakani.sa/auth
+[12:09:39.313] [INFO ] [ReportManager.java:91] - Step 01: Login to Sakani Partners
+[12:09:40.450] [DEBUG] [ReportManager.java:86] - Clear text :By.xpath: //label[text()=' يرجى ادخال رقم الهوية الوطنية / الإقامة ']/ancestor::app-sapa-input-with-icon-v2/descendant::input
+[12:09:40.552] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //label[text()=' يرجى ادخال رقم الهوية الوطنية / الإقامة ']/ancestor::app-sapa-input-with-icon-v2/descendant::input
+[12:09:40.649] [DEBUG] [ReportManager.java:86] - Set text :1056789129 By.xpath: //label[text()=' يرجى ادخال رقم الهوية الوطنية / الإقامة ']/ancestor::app-sapa-input-with-icon-v2/descendant::input
+[12:09:40.906] [DEBUG] [ReportManager.java:86] - Clear text :By.xpath: //label[text()=' كلمة المرور ']/ancestor::app-sapa-password-input-with-icon-v2/descendant::input
+[12:09:40.999] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //label[text()=' كلمة المرور ']/ancestor::app-sapa-password-input-with-icon-v2/descendant::input
+[12:09:41.125] [DEBUG] [ReportManager.java:86] - Set text :Aa@123456 By.xpath: //label[text()=' كلمة المرور ']/ancestor::app-sapa-password-input-with-icon-v2/descendant::input
+[12:09:41.285] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //span[text()=' تسجيل الدخول ']/parent::button
+[12:09:43.167] [DEBUG] [ReportManager.java:86] - Clear text :By.xpath: //label[text()=' رمز التحقق ']/parent::app-sapa-label-v2/parent::div/descendant::input[1]
+[12:09:43.286] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //label[text()=' رمز التحقق ']/parent::app-sapa-label-v2/parent::div/descendant::input[1]
+[12:09:43.441] [DEBUG] [ReportManager.java:86] - Set text :1234 By.xpath: //label[text()=' رمز التحقق ']/parent::app-sapa-label-v2/parent::div/descendant::input[1]
+[12:09:43.617] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //span[contains (text() , 'التحقق من الرمز')]
+[12:09:44.357] [DEBUG] [ReportManager.java:86] - Click :By.xpath: //button[text()='إلغاء']
+[12:09:44.488] [INFO ] [ReportManager.java:91] - Step 02: Verify Homepage is visible to the user
+[12:09:48.045] [INFO ] [ReportManager.java:106] - LoginAsAnIndividual passed!
+[12:09:48.045] [INFO ] [ReportManager.java:91] - Test Status : TC_39_login to Sakani Partners as an Individual Login login to Sakani Partners as an Individual login to Sakani Partners as an Individual SmokeSuite PASS
+[12:09:48.749] [DEBUG] [ReportManager.java:86] - Suite execution Completed.

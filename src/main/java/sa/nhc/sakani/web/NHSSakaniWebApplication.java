@@ -1,10 +1,10 @@
 package sa.nhc.sakani.web;
 
 import com.testcrew.utility.TCRobot;
+import sa.nhc.sakani.web.objects.RegistrationAndLoginPartnersPageObjects;
 import sa.nhc.sakani.web.pages.*;
 import com.testcrew.manager.TestConfigManager;
 import com.testcrew.web.Browser;
-
 import java.awt.event.KeyEvent;
 import java.util.Map;
 
@@ -63,25 +63,44 @@ public class NHSSakaniWebApplication {
         } else {
             Browser.openUrl(TestConfigManager.getTestSettingsWebAppURL());
         }
+//        TCRobot robot = new TCRobot();
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        Browser.waitForSeconds(1);
+//        robot.setText(data.get("Username"));
+//        robot.keyPress(KeyEvent.VK_TAB);
+//        Browser.waitForSeconds(1);
+//        robot.setText(data.get("InitialPassword"));
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        Browser.waitForSeconds(1);
+////        robot.keyPress(KeyEvent.VK_TAB);
+//        Browser.waitForSeconds(1);
+//        for (int i = 0; i < 4; i++) {
+//            robot.keyPress(KeyEvent.VK_CONTROL);
+//            robot.keyPress(KeyEvent.VK_SUBTRACT);
+//            robot.keyRelease(KeyEvent.VK_SUBTRACT);
+//            robot.keyRelease(KeyEvent.VK_CONTROL);
+//            robot.keyRelease(KeyEvent.VK_SUBTRACT);
+//            robot.keyRelease(KeyEvent.VK_CONTROL);
+//        }
+
         TCRobot robot = new TCRobot();
-        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.setText("sakani");
         Browser.waitForSeconds(1);
-        robot.setText(data.get("Username"));
         robot.keyPress(KeyEvent.VK_TAB);
         Browser.waitForSeconds(1);
-        robot.setText(data.get("InitialPassword"));
+        robot.setText("together we build Vision 2030");
+        Browser.waitForSeconds(1);
         robot.keyPress(KeyEvent.VK_ENTER);
-        Browser.waitForSeconds(1);
-//        robot.keyPress(KeyEvent.VK_TAB);
-        Browser.waitForSeconds(1);
-        for (int i = 0; i < 4; i++) {
+        Browser.waitUntilVisibilityOfElement(RegistrationAndLoginPartnersPageObjects.LoginButton(), 100);
+        for (int i = 0; i < 2; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyRelease(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_SUBTRACT);
         }
-
     }
 }

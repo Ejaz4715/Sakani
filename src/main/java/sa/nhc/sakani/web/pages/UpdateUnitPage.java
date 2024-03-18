@@ -21,7 +21,7 @@ import java.util.List;
 
 import static com.testcrew.manager.PDFReportManager.logger;
 import static com.testcrew.web.Browser.driver;
-public class UpdateUnitPage    {
+public class UpdateUnitPage {
 
     public UpdateUnitPage(){
 

@@ -12,7 +12,7 @@ public class UpdateUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Application Enter Username, Enter Password, click Login");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.newMethods.LoginAsAdmin(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to Developers page, Add a developer");
         app.updateUnitPage.navigateToDevelopersPage();
@@ -36,7 +36,7 @@ public class UpdateUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Application Enter Username, Enter Password, click Login");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.newMethods.LoginAsAdmin(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to Projects page, search for the project and view details");
         app.updateUnitPage.NavigateToProjectsPage();
@@ -59,7 +59,7 @@ public class UpdateUnit extends NHSSakaniWebTest {
             logger.info("Step 00: Test Data : " + data.toString());
             app.openApplication(data);
             logger.info("Step 01: Login to Sakani Partners");
-            app.registrationAndLoginPartners.loginToSakani();
+            //app.registrationAndLoginPartners.loginToSakani();
             app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
             app.registrationAndLoginPartners.inputOTP();
             app.registrationAndLoginPartners.closePopUp();
@@ -107,7 +107,7 @@ public class UpdateUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -156,7 +156,7 @@ public class UpdateUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -185,6 +185,5 @@ public class UpdateUnit extends NHSSakaniWebTest {
         logger.info("Step 05: Verify The Unit Status Can Not Be Update It");
         app.updateUnitPage.checkTheErrorMessage();
 //        app.updateUnitPage.deleteFile();
-
     }
 }

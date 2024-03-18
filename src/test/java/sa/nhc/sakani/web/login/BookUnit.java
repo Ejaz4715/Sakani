@@ -12,7 +12,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -46,7 +46,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Housing");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.commonUtilityPage.closePopUpWindows();
         app.newMethods.userLoginNew(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to My Activity Page");
@@ -70,7 +70,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -104,7 +104,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Housing");
-        app.registrationAndLoginPartners.loginToSakani();
+//        //app.registrationAndLoginPartners.loginToSakani();
         app.commonUtilityPage.closePopUpWindows();
         app.newMethods.userLoginNew(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to My Activity Page");
@@ -129,7 +129,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -161,7 +161,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -193,7 +193,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -226,7 +226,7 @@ public class BookUnit extends NHSSakaniWebTest {
     public void PayUnitBookingPricePrivateLandAsNonEligibleUser(Map<String, String> data) throws Exception {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.commonUtilityPage.closePopUpWindows();
         app.newMethods.userLoginNew(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to My Activity Page");
@@ -250,7 +250,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Partners");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.registrationAndLoginPartners.loginToSakaniPartners(data.get("Username"), data.get("Password"));
         app.registrationAndLoginPartners.inputOTP();
         app.registrationAndLoginPartners.closePopUp();
@@ -273,7 +273,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 05: Select bank name and continue");
         app.bookUnitPage.selectBankName(data.get("Bank_name"));
         app.bookUnitPage.clickConfirmAndBookButton();
-        logger.info("Step 06: Verify booking is done and confirmed");
+        logger.info("Step 06: Verify booking is confirmed");
 //        app.bookUnitPage.assertConfirmationPopUp();
 //        app.bookUnitPage.clickConfirmButton();
         app.bookUnitPage.assertBookingCofirmedText();
@@ -284,7 +284,7 @@ public class BookUnit extends NHSSakaniWebTest {
         logger.info("Step 00: Test Data : " + data.toString());
         app.openApplication(data);
         logger.info("Step 01: Login to Sakani Housing");
-        app.registrationAndLoginPartners.loginToSakani();
+        //app.registrationAndLoginPartners.loginToSakani();
         app.commonUtilityPage.closePopUpWindows();
         app.newMethods.userLoginNew(data.get("Username"), data.get("Password"));
         logger.info("Step 02: Navigate to My Activity Page");
